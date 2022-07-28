@@ -9,22 +9,31 @@
 /* Begin PBXBuildFile section */
 		4B18C5F82891D75600507D81 /* HomePageEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C5F72891D75600507D81 /* HomePageEXT.swift */; };
 		4B18C5FA2891D7AD00507D81 /* SecondPageEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C5F92891D7AD00507D81 /* SecondPageEXT.swift */; };
-		4B18C5FD2891D87C00507D81 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C5FC2891D87C00507D81 /* NotesViewModel.swift */; };
+		4B18C60E28929D8C00507D81 /* NotesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C60C28929D8C00507D81 /* NotesApp.xcdatamodeld */; };
+		4B18C6202892A25D00507D81 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C61F2892A25D00507D81 /* NoteViewModel.swift */; };
+		4B18C6232892A2C000507D81 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4B18C6222892A2C000507D81 /* SnapKit */; };
+		4B18C6542892BF4F00507D81 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C6522892BF4F00507D81 /* Note+CoreDataClass.swift */; };
+		4B18C6552892BF4F00507D81 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C6532892BF4F00507D81 /* Note+CoreDataProperties.swift */; };
+		4B18C65A2892D15300507D81 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C6592892D15300507D81 /* EditViewController.swift */; };
+		4B18C65C2892D1F600507D81 /* EditPageEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B18C65B2892D1F600507D81 /* EditPageEXT.swift */; };
 		4B4A6559289081FF0018F8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A6558289081FF0018F8FE /* AppDelegate.swift */; };
 		4B4A6562289082000018F8FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4A6561289082000018F8FE /* Assets.xcassets */; };
 		4B4A6565289082000018F8FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4A6563289082000018F8FE /* LaunchScreen.storyboard */; };
 		4B4A656E289082930018F8FE /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A656D289082930018F8FE /* NavigationViewController.swift */; };
 		4B4A6571289083150018F8FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A6570289083150018F8FE /* HomeViewController.swift */; };
 		4B4A65732890833E0018F8FE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A65722890833E0018F8FE /* SecondViewController.swift */; };
-		4B4A6576289084540018F8FE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4A6575289084540018F8FE /* SnapKit */; };
 		4B4A657A289084D50018F8FE /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A6579289084D50018F8FE /* MyTableViewCell.swift */; };
-		4B4A657E28909E400018F8FE /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4A657D28909E400018F8FE /* YPImagePicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B18C5F72891D75600507D81 /* HomePageEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageEXT.swift; sourceTree = "<group>"; };
 		4B18C5F92891D7AD00507D81 /* SecondPageEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageEXT.swift; sourceTree = "<group>"; };
-		4B18C5FC2891D87C00507D81 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		4B18C60D28929D8C00507D81 /* NotesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesApp.xcdatamodel; sourceTree = "<group>"; };
+		4B18C61F2892A25D00507D81 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		4B18C6522892BF4F00507D81 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataClass.swift"; path = "../Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4B18C6532892BF4F00507D81 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataProperties.swift"; path = "../Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B18C6592892D15300507D81 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		4B18C65B2892D1F600507D81 /* EditPageEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageEXT.swift; sourceTree = "<group>"; };
 		4B4A6555289081FF0018F8FE /* Note_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4A6558289081FF0018F8FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4A6561289082000018F8FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,8 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4A6576289084540018F8FE /* SnapKit in Frameworks */,
-				4B4A657E28909E400018F8FE /* YPImagePicker in Frameworks */,
+				4B18C6232892A2C000507D81 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,16 +62,26 @@
 			children = (
 				4B18C5F72891D75600507D81 /* HomePageEXT.swift */,
 				4B18C5F92891D7AD00507D81 /* SecondPageEXT.swift */,
+				4B18C65B2892D1F600507D81 /* EditPageEXT.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4B18C5FB2891D86900507D81 /* NotesViewModel */ = {
+		4B18C60F28929E0900507D81 /* NoteModel */ = {
 			isa = PBXGroup;
 			children = (
-				4B18C5FC2891D87C00507D81 /* NotesViewModel.swift */,
+				4B18C6522892BF4F00507D81 /* Note+CoreDataClass.swift */,
+				4B18C6532892BF4F00507D81 /* Note+CoreDataProperties.swift */,
 			);
-			path = NotesViewModel;
+			path = NoteModel;
+			sourceTree = "<group>";
+		};
+		4B18C61E2892A1B400507D81 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B18C61F2892A25D00507D81 /* NoteViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4B4A654C289081FF0018F8FE = {
@@ -85,12 +103,14 @@
 		4B4A6557289081FF0018F8FE /* Note_App */ = {
 			isa = PBXGroup;
 			children = (
-				4B18C5FB2891D86900507D81 /* NotesViewModel */,
+				4B18C61E2892A1B400507D81 /* ViewModel */,
+				4B18C60F28929E0900507D81 /* NoteModel */,
 				4B18C5F62891D74300507D81 /* Extensions */,
 				4B4A657B28909CB40018F8FE /* TableViewCell */,
 				4B4A656F289082FD0018F8FE /* ViewControllers */,
 				4B4A656C289082730018F8FE /* NavigationController */,
 				4B4A6558289081FF0018F8FE /* AppDelegate.swift */,
+				4B18C60C28929D8C00507D81 /* NotesApp.xcdatamodeld */,
 				4B4A6561289082000018F8FE /* Assets.xcassets */,
 				4B4A6563289082000018F8FE /* LaunchScreen.storyboard */,
 				4B4A6566289082000018F8FE /* Info.plist */,
@@ -111,6 +131,7 @@
 			children = (
 				4B4A6570289083150018F8FE /* HomeViewController.swift */,
 				4B4A65722890833E0018F8FE /* SecondViewController.swift */,
+				4B18C6592892D15300507D81 /* EditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -140,8 +161,7 @@
 			);
 			name = Note_App;
 			packageProductDependencies = (
-				4B4A6575289084540018F8FE /* SnapKit */,
-				4B4A657D28909E400018F8FE /* YPImagePicker */,
+				4B18C6222892A2C000507D81 /* SnapKit */,
 			);
 			productName = Note_App;
 			productReference = 4B4A6555289081FF0018F8FE /* Note_App.app */;
@@ -172,8 +192,7 @@
 			);
 			mainGroup = 4B4A654C289081FF0018F8FE;
 			packageReferences = (
-				4B4A6574289084540018F8FE /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4B4A657C28909E400018F8FE /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				4B18C6212892A2C000507D81 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 4B4A6556289081FF0018F8FE /* Products */;
 			projectDirPath = "";
@@ -203,10 +222,15 @@
 			files = (
 				4B4A65732890833E0018F8FE /* SecondViewController.swift in Sources */,
 				4B4A656E289082930018F8FE /* NavigationViewController.swift in Sources */,
+				4B18C6542892BF4F00507D81 /* Note+CoreDataClass.swift in Sources */,
+				4B18C6202892A25D00507D81 /* NoteViewModel.swift in Sources */,
+				4B18C65C2892D1F600507D81 /* EditPageEXT.swift in Sources */,
 				4B18C5FA2891D7AD00507D81 /* SecondPageEXT.swift in Sources */,
+				4B18C6552892BF4F00507D81 /* Note+CoreDataProperties.swift in Sources */,
 				4B4A6559289081FF0018F8FE /* AppDelegate.swift in Sources */,
-				4B18C5FD2891D87C00507D81 /* NotesViewModel.swift in Sources */,
 				4B18C5F82891D75600507D81 /* HomePageEXT.swift in Sources */,
+				4B18C65A2892D15300507D81 /* EditViewController.swift in Sources */,
+				4B18C60E28929D8C00507D81 /* NotesApp.xcdatamodeld in Sources */,
 				4B4A657A289084D50018F8FE /* MyTableViewCell.swift in Sources */,
 				4B4A6571289083150018F8FE /* HomeViewController.swift in Sources */,
 			);
@@ -418,36 +442,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4B4A6574289084540018F8FE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		4B18C6212892A2C000507D81 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-		4B4A657C28909E400018F8FE /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
-			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4B4A6575289084540018F8FE /* SnapKit */ = {
+		4B18C6222892A2C000507D81 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4B4A6574289084540018F8FE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 4B18C6212892A2C000507D81 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		4B4A657D28909E400018F8FE /* YPImagePicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4B4A657C28909E400018F8FE /* XCRemoteSwiftPackageReference "YPImagePicker" */;
-			productName = YPImagePicker;
-		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4B18C60C28929D8C00507D81 /* NotesApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4B18C60D28929D8C00507D81 /* NotesApp.xcdatamodel */,
+			);
+			currentVersion = 4B18C60D28929D8C00507D81 /* NotesApp.xcdatamodel */;
+			path = NotesApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4B4A654D289081FF0018F8FE /* Project object */;
 }

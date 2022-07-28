@@ -10,18 +10,16 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
     
-    lazy var image =  UIImageView()
-    
     lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.textColor = UIColor.init(named: "colorSet2")
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
     lazy var noteLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = UIColor.init(named: "colorSet2")
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.numberOfLines = 0
         return label
@@ -30,25 +28,25 @@ class MyTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.setupUI()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError()
     }
     
-    func setupUI() {
-        self.contentView.addSubview(headerLabel)
-        self.contentView.addSubview(noteLabel)
+    private func setupUI() {
+        contentView.addSubview(headerLabel)
+        contentView.addSubview(noteLabel)
         
         headerLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(2)
+            make.top.equalToSuperview().offset(8)
         }
         
         noteLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(10)
-            make.top.equalTo(headerLabel.snp.bottom).offset(10)
+            make.top.equalTo(headerLabel.snp.bottom).offset(12)
             make.right.equalToSuperview().offset(-5)
         }
     }

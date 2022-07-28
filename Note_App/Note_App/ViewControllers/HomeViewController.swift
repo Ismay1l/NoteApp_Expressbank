@@ -12,15 +12,19 @@ class HomeViewController: UIViewController {
     
     //MARK: - Variables
     
-    let vm = NotesViewModel()
+    let vm = NoteViewModel()
     
     let secondVC = SecondViewController()
     
+    let editVC = EditViewController(note: Note())
+    
+    let cell = MyTableViewCell()
+   
     private var isDeleteModeOn = false
     
     //MARK: - UI Components
     
-    lazy var myTableView: UITableView = {
+    lazy var noteTableView: UITableView = {
         let view = UITableView()
         
         view.register(MyTableViewCell.self,
@@ -35,12 +39,15 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor.init(named: "colorSet")
         
         secondVC.delegate = self
+        editVC.delegate = self
         
         configureConstraints()
         configureBarButtons()
+        vm.getAllNotes()
+        noteTableView.reloadData()
     }
     
     //MARK: - Functions
@@ -71,19 +78,19 @@ class HomeViewController: UIViewController {
     @objc func onEdit() {
         self.isDeleteModeOn.toggle()
         if self.isDeleteModeOn {
-            self.myTableView.isEditing = true
+            self.noteTableView.isEditing = true 
         } else {
-            self.myTableView.isEditing = false
+            self.noteTableView.isEditing = false
         }
         
-        self.myTableView.reloadData()
+        self.noteTableView.reloadData()
     }
     
     private func configureConstraints() {
         
-        self.view.addSubview(self.myTableView)
+        self.view.addSubview(self.noteTableView)
         
-        self.myTableView.snp.makeConstraints { make in
+        self.noteTableView.snp.makeConstraints { make in
             make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(10)
             make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).offset(-10)
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(10)

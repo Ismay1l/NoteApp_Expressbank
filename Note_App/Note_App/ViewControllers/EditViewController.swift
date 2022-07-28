@@ -1,26 +1,39 @@
 //
-//  SecondViewController.swift
+//  EditViewController.swift
 //  Note_App
 //
-//  Created by Ismayil Ismayilov on 27.07.22.
+//  Created by Ismayil Ismayilov on 28.07.22.
 //
 
 import UIKit
-import YPImagePicker
 
-protocol SecondViewControllerDelegate {
-    func saveNote()
+protocol EditViewControllerDelegate {
+    func saveNoteEdit()
 }
 
-class SecondViewController: UIViewController {
+class EditViewController: UIViewController {
     
     //MARK: - Variables
     
-    var delegate: SecondViewControllerDelegate?
+    let noteVM = NoteViewModel()
     
-    private var cameraClicked = true
+    var note: Note?
     
-    private let noteVM = NoteViewModel()
+    var newTitle: String?
+    
+    var newBody: String?
+    
+    var delegate: EditViewControllerDelegate?
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(note: Note?) {
+        self.note = note
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     
     //MARK: - UI Components
     
@@ -45,17 +58,7 @@ class SecondViewController: UIViewController {
     }()
     
     //MARK: - Parent Delegate
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if cameraClicked {
-            self.headerTextField.text = ""
-            self.noteTextField.text = ""
-        }
-        
-        self.cameraClicked = true
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(named: "colorSet")
@@ -85,13 +88,7 @@ class SecondViewController: UIViewController {
         
         saveButton.tintColor = .systemOrange
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .compose,
-                                        target: self,
-                                        action: #selector(onAdd))
-        
-        addButton.tintColor = .systemOrange
-        
-        self.navigationItem.rightBarButtonItems = [saveButton, addButton]
+        self.navigationItem.rightBarButtonItems = [saveButton]
     }
     
     private func configureConstraints() {
@@ -111,42 +108,31 @@ class SecondViewController: UIViewController {
         }
     }
     
+    
     @objc func doneButtonTapped() {
         view.endEditing(true)
     }
     
     @objc func onSave() {
-        self.cameraClicked = true
-        if self.headerTextField.text != "" || self.noteTextField.text != "" {
-            
+        
+        newTitle = headerTextField.text
+        newBody = noteTextField.text
+        
             let alert = UIAlertController(title: "Success!",
-                                          message: "Note saved",
+                                          message: "Note change saved",
                                           preferredStyle: .alert)
+        
             let okButton = UIAlertAction(title: "OK",
                                          style: .default)
+        
             alert.addAction(okButton)
             self.present(alert, animated: true) {
-                self.noteVM.saveNote(title: self.headerTextField.text ?? "NS",
-                                     body: self.noteTextField.text ?? "NS")
                 
-                self.delegate?.saveNote()
+                self.noteVM.updateNote(note: self.note ?? Note(),
+                                       newTitle: self.newTitle ?? "",
+                                       newBody: self.newBody ?? "")
+                
+                self.delegate?.saveNoteEdit()
             }
-            
-        } else {
-            let alert = UIAlertController(title: "Error!",
-                                          message: "Please add note to save",
-                                          preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "OK",
-                                         style: .default)
-            alert.addAction(okButton)
-            self.present(alert, animated: true) {
-               
-            }
-        }
-    }
-    
-    @objc func onAdd() {
-        self.headerTextField.text = ""
-        self.noteTextField.text = ""
     }
 }

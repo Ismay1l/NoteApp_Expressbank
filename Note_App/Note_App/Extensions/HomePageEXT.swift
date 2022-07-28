@@ -10,30 +10,34 @@ import UIKit
 
 extension HomeViewController: UITableViewDataSource,
                               UITableViewDelegate,
-                              SecondViewControllerDelegate {
+                              SecondViewControllerDelegate,
+                              EditViewControllerDelegate {
+    func saveNoteEdit() {
+        vm.getAllNotes()
+        noteTableView.reloadData()
+    }
     
-    func saveNote(header: String, note: String, image: UIImage?) {
-        vm.headerLabel.append(header)
-        vm.notesLabel.append(note)
-        vm.images.append(image)
-        myTableView.reloadData()
+    func saveNote() {
+
+        vm.getAllNotes()
+        noteTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        vm.headerLabel.count
+        vm.noteModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(MyTableViewCell.self)") as! MyTableViewCell
-        cell.headerLabel.text = vm.headerLabel[indexPath.row]
-        cell.noteLabel.text = vm.notesLabel[indexPath.row]
-        cell.image.image = vm.images[indexPath.row]
+
+        cell.headerLabel.text = vm.noteModel[indexPath.row].title
+        cell.noteLabel.text = vm.noteModel[indexPath.row].body
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        64
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -41,11 +45,11 @@ extension HomeViewController: UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let note = vm.noteModel[indexPath.row]
         if editingStyle == .delete {
             tableView.beginUpdates()
-            vm.headerLabel.remove(at: indexPath.row)
-            vm.notesLabel.remove(at: indexPath.row)
-            vm.images.remove(at: indexPath.row)
+            vm.deleteNote(note: note)
+            vm.noteModel.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath],
                                  with: .fade)
             tableView.endUpdates()
@@ -53,9 +57,10 @@ extension HomeViewController: UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(self.secondVC, animated: true)
-        self.secondVC.headerTextField.text = vm.headerLabel[indexPath.row]
-        self.secondVC.noteTextField.text = vm.notesLabel[indexPath.row]
-        self.secondVC.image.image = vm.images[indexPath.row]
+        let note = vm.noteModel[indexPath.row]
+        editVC.note = note
+        editVC.headerTextField.text = vm.noteModel[indexPath.row].title
+        editVC.noteTextField.text = vm.noteModel[indexPath.row].body
+        self.navigationController?.pushViewController(editVC, animated: true)
     }
 }
