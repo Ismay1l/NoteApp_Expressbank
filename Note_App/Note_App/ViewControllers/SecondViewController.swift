@@ -18,13 +18,13 @@ class SecondViewController: UIViewController {
     
     var delegate: SecondViewControllerDelegate?
     
-    var cameraClicked = true
+    private var cameraClicked = true
     
     //MARK: - UI Components
     
     lazy var headerTextField: UITextField = {
         let field = UITextField()
-        field.placeholder = "Header"
+        field.placeholder = "Title"
         field.textColor = .white
         field.textAlignment = .center
         field.font = .systemFont(ofSize: 20, weight: .bold)
@@ -67,11 +67,13 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         
-        self.view.addSubview(self.headerTextField)
-        self.view.addSubview(self.noteTextField)
-        self.view.addSubview(image)
-        
-        self.getConstraints()
+        configureConstraints()
+        configureNavigationBarButtons()
+    }
+    
+    //MARK: - Functions
+    
+    private func configureNavigationBarButtons() {
         
         let toolbar = UIToolbar()
         
@@ -105,12 +107,15 @@ class SecondViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [saveButton, addButton, cameraButton]
     }
     
-    //MARK: - Functions
-    
-    func getConstraints() {
+    private func configureConstraints() {
+        
+        self.view.addSubview(self.headerTextField)
+        self.view.addSubview(self.noteTextField)
+        self.view.addSubview(image)
+        
         self.headerTextField.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(5)
-            make.centerX.equalToSuperview()
+            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(10)
         }
         
         self.noteTextField.snp.makeConstraints { make in
@@ -184,12 +189,5 @@ class SecondViewController: UIViewController {
         }
         
         self.present(picker, animated: true)
-    }
-}
-
-extension SecondViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
